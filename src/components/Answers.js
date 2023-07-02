@@ -17,7 +17,7 @@ export default function Answers(props){
                         (props.selectedAnsTracker[props.index]==="" && props.correctAns===ans) ||
                         (props.correctAns === ans) ? "none" : undefined ,
                 opacity: (props.selectedAnsTracker.includes(he.decode(ans)) && props.correctAns === ans) ||
-                         (props.correctAns === ans) ? undefined : "70%"
+                         (props.correctAns === ans) ? undefined : "65%"
 
             }
 

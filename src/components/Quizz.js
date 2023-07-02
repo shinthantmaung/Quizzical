@@ -1,5 +1,6 @@
 import React from "react"
 import he from "he"
+import Confetti from "react-confetti"
 import Answers from "./Answers"
 
 export default function Quizz(props){
@@ -64,6 +65,9 @@ export default function Quizz(props){
                 <div className="quizz-container">
                     {quizzElements}
                 </div>
+                {checked && correctAnsCounter() <= 1 && <h2 className="question">I'm sorry&#x1F613; your knowledge of anime is very basic.</h2>}
+                {checked && correctAnsCounter() >= 2 && correctAnsCounter() <= 4 && <h2 className="question">Not bad but not impressive&#x1F61C;</h2>}
+                {checked && correctAnsCounter() === 5 && <h2 className="question">Congradulations&#x1F631;!You must be a true otaku</h2>}
                 {checked ?
                 <div className="checked-bottom-container">
                     <h2 className="question answer-counter">You scored <span className="question">{correctAnsCounter()}</span>/5 correct answers</h2>
@@ -72,5 +76,6 @@ export default function Quizz(props){
                     :
                 <button onClick={checkAns} className="quizz-button">Check answers</button>
                     }
+                {checked && correctAnsCounter() === 5 && <Confetti/>}
             </>
             )}
