@@ -172,6 +172,10 @@ body{
     margin-right: 1rem;
   }
 
+  .confetti-container{
+    position: fixed;
+  }
+
   @media (min-width: 900px){
     #root{
       height: 100vh;

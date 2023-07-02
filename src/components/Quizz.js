@@ -76,6 +76,8 @@ export default function Quizz(props){
                     :
                 <button onClick={checkAns} className="quizz-button">Check answers</button>
                     }
-                {checked && correctAnsCounter() === 5 && <Confetti/>}
+                <div className="confetti-container">
+                    {checked && correctAnsCounter() === 5 && <Confetti/>}
+                </div>
             </>
             )}
